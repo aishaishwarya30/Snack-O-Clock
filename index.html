@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NightBite-Food-Delivery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#" aria-label="Knight Bite home"></a>
+    <input id="menu-toggle" type="checkbox" />
+    <label class="hamburger" for="menu-toggle" aria-label="Open menu"><span></span></label>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#franchise">Franchise</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <h1>Order late night meals</h1>
+        <div class="store-badges" id="order">
+          <a class="app-badge appstore" href="https://apps.apple.com/in/app/knight-bite-food-delivery-app/id1387840512" aria-label="Download on the App Store"></a>
+          <a class="app-badge playstore" href="https://play.google.com/store/apps/details?id=com.axndxsoftwarehub.knightbite&hl=en" aria-label="Get it on Google Play"></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div>
+        <strong>40 min</strong>
+        <span>Average delivery</span>
+      </div>
+      <div>
+        <strong>7 PM-4 AM</strong>
+        <span>Night service</span>
+      </div>
+      <div>
+        <strong>Bulk</strong>
+        <span>Party orders</span>
+      </div>
+      <div>
+        <strong>App + Call</strong>
+        <span>Easy ordering</span>
+      </div>
+    </section>
+
+    <section class="story-section" id="about">
+      <div class="section-head">
+        <p class="eyebrow">About Knight Bite</p>
+        <h2>Knight Bite is a cloud kitchen for nocturnals.</h2>
+      </div>
+      <div class="story-grid">
+        <p>Knight Bite delivers food to hungry late-night eaters with equal focus on food, technology and logistics.</p>
+        <p>It brings together nocturnals who find it difficult to order at night, helping them get meals through the app or a quick call.</p>
+      </div>
+      <div class="about-photo-band">
+        <span>App ordering</span>
+        <span>Late night kitchens</span>
+        <span>Fast delivery</span>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="section-head">
+        <p class="eyebrow">Full Menu</p>
+        <h2>Burgers, fries, mains, drinks, wraps and desserts.</h2>
+      </div>
+      <div class="category-grid">
+        <a class="category-card burgers" href="#hot-picks"><span>Burgers</span></a>
+        <a class="category-card fries" href="#hot-picks"><span>Fries / Starters</span></a>
+        <a class="category-card mains" href="#hot-picks"><span>Main Course</span></a>
+        <a class="category-card drinks" href="#hot-picks"><span>Drinks</span></a>
+        <a class="category-card wraps" href="#hot-picks"><span>Wraps</span></a>
+        <a class="category-card desserts" href="#hot-picks"><span>Desserts</span></a>
+      </div>
+      <div class="section-head compact" id="hot-picks">
+        <p class="eyebrow">Hot picks</p>
+        <h2>Food that looks as good as midnight feels.</h2>
+      </div>
+      <div class="menu-grid" id="menu-grid">
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=80" alt="Cheese burger with fries" />
+          <div>
+            <span>Bestseller</span>
+            <h3>Cheese Bomb Burger</h3>
+            <p>Stacked patty, melted cheese, house sauce and crunchy fries.</p>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80" alt="Pizza with toppings" />
+          <div>
+            <span>Fresh baked</span>
+            <h3>Loaded Night Pizza</h3>
+            <p>Cheesy, saucy, crisp-edged slices made for sharing.</p>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=900&q=80" alt="Spicy rice bowl" />
+          <div>
+            <span>Spicy</span>
+            <h3>Midnight Rice Bowl</h3>
+            <p>Warm rice, punchy spices and a filling comfort-food finish.</p>
+          </div>
+        </article>
+      </div>
+      <form class="order-form" id="order-form">
+        <h3>Place a Demo Order</h3>
+        <select id="order-item" required>
+          <option value="">Select menu item</option>
+        </select>
+        <input type="text" id="order-name" placeholder="Your Name*" required />
+        <input type="tel" id="order-phone" placeholder="Phone Number*" required />
+        <textarea id="order-address" placeholder="Delivery Address*" required></textarea>
+        <button type="submit">Place Order</button>
+        <p id="order-message">Order saved successfully.</p>
+      </form>
+    </section>
+
+    <section class="motion-reel" id="reel">
+      <div class="reel-copy">
+        <p class="eyebrow">Animated food wall</p>
+        <h2>Fresh frames, rolling all night.</h2>
+        <p>Food photos move like a short video reel, giving the page a more energetic delivery-app feel without needing a heavy video file.</p>
+      </div>
+      <div class="reel-window" aria-hidden="true">
+        <div class="reel-track">
+          <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=700&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?auto=format&fit=crop&w=700&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=700&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=700&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=700&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?auto=format&fit=crop&w=700&q=80" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="franchise-section" id="franchise">
+      <div class="franchise-hero">
+        <p class="eyebrow">Franchise</p>
+        <h2>Franchise with Knight Bite</h2>
+        <p>Get started with the modern way of doing business.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#apply">Apply Now</a>
+          <a class="ghost-btn" href="#watch">Watch Video</a>
+        </div>
+      </div>
+      <div class="mission-grid">
+        <article>
+          <h3>Mission</h3>
+          <p>To deliver the best food with the ultimate customer service.</p>
+        </article>
+        <article>
+          <h3>Vision</h3>
+          <p>To be the most favourite food chain brand in the country and world.</p>
+        </article>
+      </div>
+      <div class="benefits-grid">
+        <article>
+          <span>01</span>
+          <h3>Low Investment</h3>
+          <p>No need for prime roadside location or heavy interior decor.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Low Maintenance</h3>
+          <p>Focus on hygiene, rent, staff and kitchen storage.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Basic Skillset</h3>
+          <p>Simple staff training with materials sent from the brand.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>In-house POS</h3>
+          <p>Manage and track orders with connected POS support.</p>
+        </article>
+      </div>
+      <form class="franchise-form" id="apply">
+        <h3>Apply Here</h3>
+        <input type="text" placeholder="First Name*" required />
+        <input type="text" placeholder="Second Name*" required />
+        <input type="tel" placeholder="Contact Number*" required />
+        <input type="email" placeholder="Email*" required />
+        <input type="text" placeholder="Target Market*" required />
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Send Request</button>
+      </form>
+    </section>
+
+    <section class="split-banner">
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1300&q=80" alt="Table full of fast food" />
+      <div>
+        <p class="eyebrow">Party mode</p>
+        <h2>Big orders for bigger hunger.</h2>
+        <p>Plan a late movie night, hostel hangout or office crunch session with combos that land warm and fast.</p>
+        <a class="primary-btn" href="mailto:aishuhsia2@gmail.com">Plan a bulk order</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div>
+      <h2>Knight Bite</h2>
+      <p>Late-night food delivery inspired by the original Knight Bite website.</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <a href="mailto:aishuhsia2@gmail.com">aishuhsia2@gmail.com</a>
+      <a href="tel:+918047106107">+91 8047106107</a>
+    </div>
+    <form id="email-form">
+      <h3>Join the night list</h3>
+      <label>
+        <span>Email</span>
+        <input type="email" placeholder="Enter your email" required />
+      </label>
+      <button type="submit">Notify Me</button>
+      <p id="form-message">Thanks, you are on the list.</p>
+    </form>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

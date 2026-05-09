@@ -1,0 +1,954 @@
+:root {
+  --ink: #171219;
+  --night: #050505;
+  --pink: #ff5672;
+  --violet: #c77bf4;
+  --gold: #ffc24b;
+  --mint: #4bd6aa;
+  --cream: #fff7ed;
+  --muted: #6c6572;
+}
+
+@font-face {
+  font-family: "Nicotine";
+  src: url("https://www.knight-bite.com/nicotine-webfont.woff2") format("woff2"),
+       url("https://www.knight-bite.com/nicotine-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff8f1;
+  color: var(--ink);
+  font-family: "Nunito", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.topbar {
+  align-items: center;
+  background: rgb(0 0 0 / 55%);
+  backdrop-filter: blur(8px);
+  display: flex;
+  height: 140px;
+  left: 0;
+  padding: 0 clamp(28px, 5vw, 94px);
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 20;
+}
+
+.logo {
+  background: url("https://nrzl4apc.knight-bite.com/main/res/brand-logo.svg") center / contain no-repeat;
+  display: block;
+  height: 68px;
+  width: 150px;
+}
+
+nav {
+  align-items: center;
+  display: flex;
+  gap: clamp(20px, 3vw, 42px);
+  margin-left: auto;
+}
+
+nav a {
+  color: rgb(255 255 255 / 84%);
+  font-size: 22px;
+  font-weight: 800;
+  position: relative;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+.topbar nav a:first-child {
+  color: #fff;
+}
+
+.topbar nav a:first-child::after {
+  background: var(--violet);
+  border-radius: 50%;
+  bottom: -18px;
+  content: "";
+  height: 8px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 8px;
+}
+
+.primary-btn,
+.ghost-btn {
+  align-items: center;
+  border-radius: 999px;
+  display: inline-flex;
+  font-weight: 900;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-cta,
+.primary-btn {
+  background: linear-gradient(135deg, var(--pink), #ff7a45);
+  color: #fff;
+  box-shadow: 0 14px 34px rgb(255 86 114 / 34%);
+}
+
+.ghost-btn {
+  border: 1px solid rgb(255 255 255 / 36%);
+  color: #fff;
+}
+
+.nav-cta:hover,
+.primary-btn:hover,
+.ghost-btn:hover {
+  transform: translateY(-2px);
+}
+
+#menu-toggle,
+.hamburger {
+  display: none;
+}
+
+.hero {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-bg {
+  animation: heroZoom 18s ease-in-out infinite alternate;
+  background:
+    linear-gradient(180deg, rgb(0 0 0 / 18%) 0%, rgb(0 0 0 / 22%) 46%, rgb(0 0 0 / 38%) 100%),
+    url("https://nrzl4apc.knight-bite.com/main/res/index/app-link-background.svg") center / cover no-repeat;
+  inset: 0;
+  position: absolute;
+}
+
+.hero-shade {
+  background: linear-gradient(90deg, rgb(0 0 0 / 20%), transparent 30%, rgb(0 0 0 / 12%));
+  inset: 0;
+  position: absolute;
+}
+
+.hero-copy {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 150px 20px 70px;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  font-family: "Bebas Neue", "Nunito", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+h1 {
+  color: #fff;
+  filter: drop-shadow(0 10px 22px rgb(0 0 0 / 36%));
+  font-family: "Nicotine", "Bebas Neue", sans-serif;
+  font-size: clamp(62px, 7.3vw, 108px);
+  letter-spacing: 2px;
+  max-width: 1280px;
+  text-transform: uppercase;
+}
+
+.store-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 54px;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.app-badge {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  filter: drop-shadow(0 14px 26px rgb(0 0 0 / 45%));
+  transition: transform 0.25s ease;
+}
+
+.app-badge:hover {
+  transform: scale(0.94);
+}
+
+.appstore {
+  background-image: url("https://nrzl4apc.knight-bite.com/main/res/index/ios-store.svg");
+  height: 68px;
+  width: 255px;
+}
+
+.playstore {
+  background-image: url("https://nrzl4apc.knight-bite.com/main/res/index/google-play-badge.svg");
+  height: 70px;
+  transform: scale(1.2);
+  width: 230px;
+}
+
+.playstore:hover {
+  transform: scale(1.11);
+}
+
+.features {
+  background: var(--night);
+  color: #fff;
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.story-section {
+  background: #fff8f1;
+  padding: clamp(64px, 8vw, 112px) clamp(20px, 6vw, 84px) 20px;
+}
+
+.story-grid {
+  color: var(--muted);
+  display: grid;
+  font-size: 20px;
+  gap: 26px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  line-height: 1.75;
+  max-width: 1060px;
+}
+
+.about-photo-band {
+  align-items: end;
+  background:
+    linear-gradient(180deg, rgb(0 0 0 / 5%) 0%, rgb(0 0 0 / 66%) 100%),
+    url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1800&q=85") center / cover no-repeat;
+  border-radius: 8px;
+  color: #fff;
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 48px;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.about-photo-band span {
+  background: rgb(0 0 0 / 32%);
+  font-size: clamp(22px, 3vw, 38px);
+  font-weight: 900;
+  padding: 28px;
+  text-align: center;
+}
+
+.features div {
+  background: rgb(255 255 255 / 5%);
+  padding: 30px 18px;
+  text-align: center;
+}
+
+.features strong {
+  color: var(--mint);
+  display: block;
+  font-size: clamp(28px, 3.2vw, 46px);
+  font-weight: 900;
+}
+
+.features span {
+  color: rgb(255 255 255 / 70%);
+  font-weight: 800;
+}
+
+.menu-section {
+  padding: clamp(70px, 8vw, 120px) clamp(20px, 6vw, 84px);
+}
+
+.section-head {
+  align-items: end;
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+  margin-bottom: 44px;
+}
+
+.section-head h2 {
+  font-size: clamp(54px, 7vw, 108px);
+  max-width: 920px;
+}
+
+.section-head.compact {
+  margin-top: 72px;
+}
+
+.section-head.compact h2 {
+  font-size: clamp(44px, 5.2vw, 76px);
+}
+
+.category-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.category-card {
+  align-items: end;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  box-shadow: 0 20px 70px rgb(62 33 12 / 12%);
+  color: #fff;
+  display: flex;
+  min-height: 260px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.category-card::before {
+  background: linear-gradient(180deg, rgb(0 0 0 / 8%) 0%, rgb(0 0 0 / 72%) 100%);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.category-card span {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(42px, 4.8vw, 70px);
+  line-height: 0.95;
+  padding: 24px;
+  position: relative;
+}
+
+.category-card:hover {
+  box-shadow: 0 24px 82px rgb(62 33 12 / 22%);
+  transform: translateY(-5px);
+}
+
+.category-card.burgers {
+  background-image: url("https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=85");
+}
+
+.category-card.fries {
+  background-image: url("https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85");
+}
+
+.category-card.mains {
+  background-image: url("https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=900&q=85");
+}
+
+.category-card.drinks {
+  background-image: url("https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=900&q=85");
+}
+
+.category-card.wraps {
+  background-image: url("https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=85");
+}
+
+.category-card.desserts {
+  background-image: url("https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=900&q=85");
+}
+
+.menu-grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 20px 70px rgb(62 33 12 / 12%);
+  overflow: hidden;
+}
+
+.menu-card img {
+  aspect-ratio: 1.2;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.menu-card div {
+  padding: 24px;
+}
+
+.menu-card span {
+  color: var(--pink);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.menu-card h3 {
+  font-size: 25px;
+  font-weight: 900;
+  margin-top: 8px;
+}
+
+.menu-card p {
+  color: var(--muted);
+  line-height: 1.55;
+  margin-top: 10px;
+}
+
+.menu-price {
+  color: var(--ink);
+  display: block;
+  font-size: 20px;
+  font-weight: 900;
+  margin-top: 16px;
+}
+
+.order-form {
+  background:
+    linear-gradient(90deg, rgb(23 18 25 / 88%), rgb(23 18 25 / 72%)),
+    url("https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=1500&q=85") center / cover no-repeat;
+  border-radius: 8px;
+  color: #fff;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 44px;
+  padding: 34px;
+}
+
+.order-form h3,
+.order-form textarea,
+.order-form button,
+.order-form p {
+  grid-column: 1 / -1;
+}
+
+.order-form h3 {
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  min-height: 54px;
+  padding: 0 16px;
+}
+
+.order-form textarea {
+  min-height: 110px;
+  padding-top: 16px;
+  resize: vertical;
+}
+
+.order-form button {
+  background: linear-gradient(135deg, var(--pink), #ff7a45);
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 900;
+  justify-self: start;
+  min-height: 52px;
+  padding: 0 28px;
+  text-transform: uppercase;
+}
+
+#order-message {
+  color: var(--gold);
+  display: none;
+  font-weight: 900;
+}
+
+#order-message.show {
+  display: block;
+}
+
+.motion-reel {
+  background: #1a0d1d;
+  color: #fff;
+  display: grid;
+  gap: 38px;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(360px, 1.2fr);
+  overflow: hidden;
+  padding: clamp(70px, 8vw, 120px) 0 clamp(70px, 8vw, 120px) clamp(20px, 6vw, 84px);
+}
+
+.reel-copy {
+  align-self: center;
+  max-width: 520px;
+}
+
+.reel-copy h2,
+.split-banner h2 {
+  font-size: clamp(54px, 6.8vw, 104px);
+}
+
+.reel-copy p:last-child,
+.split-banner p {
+  color: rgb(255 255 255 / 75%);
+  font-size: 18px;
+  line-height: 1.65;
+  margin-top: 18px;
+}
+
+.reel-window {
+  overflow: hidden;
+  position: relative;
+}
+
+.reel-window::before,
+.reel-window::after {
+  content: "";
+  inset: 0 auto 0 0;
+  pointer-events: none;
+  position: absolute;
+  width: 13%;
+  z-index: 2;
+}
+
+.reel-window::before {
+  background: linear-gradient(90deg, #1a0d1d, transparent);
+}
+
+.reel-window::after {
+  background: linear-gradient(270deg, #1a0d1d, transparent);
+  left: auto;
+  right: 0;
+}
+
+.reel-track {
+  animation: reelSlide 24s linear infinite;
+  display: flex;
+  gap: 22px;
+  width: max-content;
+}
+
+.reel-track img {
+  aspect-ratio: 0.78;
+  border-radius: 8px;
+  height: 470px;
+  object-fit: cover;
+  width: 365px;
+}
+
+.split-banner {
+  align-items: stretch;
+  background: var(--ink);
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  min-height: 680px;
+}
+
+.franchise-section {
+  background: #fff8f1;
+}
+
+.franchise-hero {
+  background:
+    linear-gradient(90deg, rgb(0 0 0 / 76%) 0%, rgb(0 0 0 / 50%) 48%, rgb(0 0 0 / 18%) 100%),
+    url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1900&q=85") center / cover no-repeat;
+  color: #fff;
+  min-height: 620px;
+  padding: clamp(84px, 10vw, 150px) clamp(20px, 6vw, 84px);
+}
+
+.franchise-hero h2 {
+  font-size: clamp(66px, 8.5vw, 128px);
+  max-width: 820px;
+}
+
+.franchise-hero p:not(.eyebrow) {
+  color: rgb(255 255 255 / 82%);
+  font-size: 24px;
+  line-height: 1.5;
+  margin-top: 16px;
+  max-width: 520px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.mission-grid,
+.benefits-grid {
+  display: grid;
+  gap: 24px;
+  padding: 70px clamp(20px, 6vw, 84px) 0;
+}
+
+.mission-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mission-grid article,
+.benefits-grid article,
+.franchise-form {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 18px 60px rgb(62 33 12 / 10%);
+}
+
+.mission-grid article {
+  padding: 34px;
+}
+
+.mission-grid h3,
+.benefits-grid h3,
+.franchise-form h3 {
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.mission-grid p,
+.benefits-grid p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.benefits-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.benefits-grid article {
+  padding: 28px;
+}
+
+.benefits-grid span {
+  color: var(--pink);
+  display: block;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.franchise-form {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 70px clamp(20px, 6vw, 84px);
+  padding: 34px;
+}
+
+.franchise-form h3,
+.franchise-form textarea,
+.franchise-form button {
+  grid-column: 1 / -1;
+}
+
+.franchise-form input,
+.franchise-form textarea {
+  border: 1px solid rgb(23 18 25 / 18%);
+  border-radius: 8px;
+  font: inherit;
+  min-height: 54px;
+  padding: 0 16px;
+}
+
+.franchise-form textarea {
+  min-height: 120px;
+  padding-top: 16px;
+  resize: vertical;
+}
+
+.franchise-form button {
+  background: linear-gradient(135deg, var(--pink), #ff7a45);
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 900;
+  justify-self: start;
+  min-height: 52px;
+  padding: 0 28px;
+  text-transform: uppercase;
+}
+
+.split-banner > img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.split-banner > div {
+  align-self: center;
+  padding: clamp(44px, 6vw, 90px);
+}
+
+.split-banner .primary-btn {
+  margin-top: 30px;
+}
+
+.footer {
+  background: #fff8f1;
+  display: grid;
+  gap: 36px;
+  grid-template-columns: 1.1fr 0.8fr 1fr;
+  padding: 70px clamp(20px, 6vw, 84px);
+}
+
+.footer h2 {
+  color: var(--pink);
+  font-size: 56px;
+}
+
+.footer h3 {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.footer p,
+.footer a,
+.footer span {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.footer a {
+  display: block;
+}
+
+.footer label {
+  display: grid;
+  gap: 8px;
+}
+
+.footer input {
+  border: 1px solid rgb(23 18 25 / 20%);
+  border-radius: 999px;
+  font: inherit;
+  min-height: 52px;
+  padding: 0 18px;
+}
+
+.footer button {
+  background: var(--ink);
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 900;
+  margin-top: 12px;
+  min-height: 52px;
+  padding: 0 22px;
+}
+
+#form-message {
+  color: var(--pink);
+  display: none;
+  font-weight: 900;
+  margin-top: 10px;
+}
+
+#form-message.show {
+  display: block;
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes floatOne {
+  50% {
+    transform: translateY(-18px) rotate(-4deg);
+  }
+}
+
+@keyframes floatTwo {
+  50% {
+    transform: translate(-18px, 15px) rotate(5deg);
+  }
+}
+
+@keyframes floatThree {
+  50% {
+    transform: translate(16px, -14px) rotate(7deg);
+  }
+}
+
+@keyframes reelSlide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 980px) {
+  nav {
+    background: rgb(19 9 22 / 95%);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    gap: 22px;
+    padding: 26px;
+    position: absolute;
+    right: 20px;
+    top: 96px;
+    width: min(320px, calc(100vw - 40px));
+  }
+
+  #menu-toggle:checked ~ nav {
+    display: flex;
+  }
+
+  .hamburger {
+    display: grid;
+    height: 44px;
+    margin-left: auto;
+    place-items: center;
+    width: 44px;
+  }
+
+  .hamburger span,
+  .hamburger span::before,
+  .hamburger span::after {
+    background: #fff;
+    border-radius: 999px;
+    content: "";
+    display: block;
+    height: 3px;
+    position: absolute;
+    width: 28px;
+  }
+
+  .hamburger span::before {
+    transform: translateY(-9px);
+  }
+
+  .hamburger span::after {
+    transform: translateY(9px);
+  }
+
+  .features,
+  .story-grid,
+  .category-grid,
+  .menu-grid,
+  .order-form,
+  .motion-reel,
+  .mission-grid,
+  .benefits-grid,
+  .split-banner,
+  .footer {
+    grid-template-columns: 1fr;
+  }
+
+  .section-head {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .about-photo-band {
+    grid-template-columns: 1fr;
+  }
+
+  .motion-reel {
+    padding-right: 0;
+  }
+
+  .split-banner > img {
+    max-height: 430px;
+  }
+
+  .franchise-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    height: 76px;
+  }
+
+  .logo {
+    height: 54px;
+    width: 120px;
+  }
+
+  .hero-copy {
+    padding-top: 25vh;
+  }
+
+  h1 {
+    font-size: 54px;
+  }
+
+  .store-badges {
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .appstore {
+    height: 52px;
+    width: 150px;
+  }
+
+  .playstore {
+    height: 54px;
+    width: 140px;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu-card img {
+    aspect-ratio: 1.45;
+  }
+
+  .reel-track img {
+    height: 330px;
+    width: 255px;
+  }
+}
