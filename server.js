@@ -128,7 +128,7 @@ function renderAdminPage() {
   </style>
 </head>
 <body>
-  <h1>NightBite Admin Dashboard</h1>
+  <h1>Snack-0-Clock Admin Dashboard</h1>
   <section>
     <h2>Orders</h2>
     ${renderList(db.orders, (item) => `<strong>${item.name}</strong> ordered ${item.item} - ${item.phone} - ${item.address}`)}
@@ -213,6 +213,6 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`NightBite server running at http://localhost:${PORT}`);
+  console.log(`Snack-0-Clock server running at http://localhost:${PORT}`);
   console.log(`Admin dashboard: http://localhost:${PORT}/admin`);
 });
