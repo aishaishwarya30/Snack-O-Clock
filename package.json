@@ -1,5 +1,5 @@
 {
-  "name": "nightbite-food-delivery",
+  "name": "Snack-0-Clock",
   "version": "1.0.0",
   "description": "Frontend and simple Node.js backend for a late-night food delivery website.",
   "main": "server.js",
